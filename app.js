@@ -23,12 +23,19 @@ const countDown = () => {
 
     // add the values in the html elements
 
-    secsBox.innerHTML = seconds;
-    minsBox.innerHTML = mins + ': ';
-    hoursBox.innerHTML = hours + ': ';
+    secsBox.innerHTML = formatTime(seconds);
+    minsBox.innerHTML = formatTime(mins) + ': ';
+    hoursBox.innerHTML = formatTime(hours) + ': ';
     daysBox.innerHTML = days + ': ';
     console.log(days, hours, mins, seconds);
 
+    // this function checks when the time is less than 10 and add 0 to time instead of a unit number
+    
+
+}
+
+const formatTime = (time) => {
+    return time < 10 ? `0${time}` : time;
 }
 
 // console.log();
